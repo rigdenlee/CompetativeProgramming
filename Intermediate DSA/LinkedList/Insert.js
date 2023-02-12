@@ -50,6 +50,19 @@ function insertNode(head, value, position) {
   return head;
 }
 
+function insertNodeWithRecursion(head, value, position) {
+  if (head === null || position <= 0) {
+    let newNode = {
+      data: value,
+      next: head
+    };
+    return newNode;
+  }
+
+  head.next = insertNodeWithRecursion(head.next, value, position - 1);
+  return head;
+}
+
 
 let A = 1
 let B = 3
