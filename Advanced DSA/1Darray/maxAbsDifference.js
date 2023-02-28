@@ -12,16 +12,15 @@ module.exports = {
   //param A : array of integers
   //return an integer
   maxArr: function (A) {
-    let ans;
     let Xmax = Number.MIN_SAFE_INTEGER
     let Ymax = Number.MIN_SAFE_INTEGER
     let Xmin = Number.MAX_SAFE_INTEGER
     let Ymin = Number.MAX_SAFE_INTEGER
     for (let i = 0; i < A.length; i++) {
       let Xr = A[i] + i;
+      let Yr = A[i] - i;
       Xmax = Math.max(Xmax, Xr)
       Xmin = Math.min(Xmin, Xr)
-      let Yr = A[i] - i;
       Ymax = Math.max(Ymax, Yr)
       Ymin = Math.min(Ymin, Yr)
     }
